@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user-service/user.service';
+import { MatSnackBar} from  '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-changepw',
@@ -11,7 +12,7 @@ export class ChangepwComponent implements OnInit {
   changepwForm!: FormGroup;
   submitted!: boolean;
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService, private snackBar:MatSnackBar) { }
 
   ngOnInit() {
     this.changepwForm = this.formBuilder.group({
@@ -37,9 +38,15 @@ get f() { return this.changepwForm.controls; }
     console.log(req)
     this.userService.changeUser(req).subscribe((response: any)=>{
       console.log(response);
+      this.snackBar.open("Login successfully ", ' ', {
+        duration: 1000,
+     });
 
     }, (error: any)  => {
       console.log(error);
+      this.snackBar.open("Login failed ", ' ', {
+        duration: 1000,
+     });
     })
    }
 }

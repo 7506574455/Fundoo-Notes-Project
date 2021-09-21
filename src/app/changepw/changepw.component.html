@@ -1,0 +1,42 @@
+<div class="maincontainer">
+    <form [formGroup]="changepwForm" (ngSubmit)="onSubmit()">  
+  <p>
+      <span class="f">F</span>
+      <span class="u">u</span>
+      <span class="n">n</span>
+      <span class="d">d</span>
+      <span class="o">o</span>
+      <span class="O">o</span>
+  </p>
+  <h1>
+      Change password to sign in
+  </h1>
+  <h2>Create a strong password</h2>
+
+  <div class="password">
+    <mat-form-field appearance="outline" class="placewidth">
+        <mat-label>Create password</mat-label>
+        <input matInput placeholder="" formControlName="password">
+        <mat-error> password required !</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label>Confirm password</mat-label>
+            <input matInput placeholder="" formControlName="password">
+            <mat-error> password required !</mat-error>
+          </mat-form-field>
+        </div>
+    <h3>At least 8 characters</h3>    
+    
+    <section class="example-section">
+        <mat-checkbox class="example-margin">Show password</mat-checkbox>   
+      </section>
+
+      <div class="footer">
+        <p class="text">Skip </p>
+        <button type="submit" mat-raised-button color="primary" class="button">Save password</button>
+    </div>
+    </form>
+</div>

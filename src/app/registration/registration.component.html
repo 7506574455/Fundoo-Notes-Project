@@ -1,0 +1,185 @@
+
+
+<div class="main" fxLayoutAlign="center">
+    <div class="mainBody" fxLayoutAlign="center ">
+        <form class="container" [formGroup]="registerForm">
+            <div class="logo">
+                <span class="f">F</span>
+                <span class="u">u</span>
+                <span class="n">n</span>
+                <span class="d">d</span>
+                <span class="o">o</span>
+                <span class="O">o</span>
+            </div>
+
+            <div class="h1">
+                <span>Create your Google Account</span>
+            </div>
+
+            <div class="section1" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" class="first_name">
+                    <mat-label>First name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="First name">
+                    <mat-error>First name Is Required !</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="last_name">
+                    <mat-label>Last name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Last name">
+                    <mat-error>Last name Is Required !</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="Section2">
+                <mat-form-field appearance="outline" class="email" style="width: 11cm; ">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="email" placeholder="Username">
+                    <mat-hint style="font-size: 1.2em;">You can use letters,numbers & periods</mat-hint>
+                    <mat-error>Email Required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="section3">
+                <button mat-button color="primary">Use my current email address instead </button>
+            </div>
+
+            <div class="Password-Confirm" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" class="Password">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" placeholder="Password">
+                    <mat-error>Password required !</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="Confirm">
+                    <mat-label>Confirm</mat-label>
+                    <input matInput formControlName="confirmPassword" placeholder="Confirm">
+                    <mat-error>Password required !</mat-error>
+                </mat-form-field>
+
+            </div>
+            <mat-hint>Use 8 or more characters with a mix of letters, numbers & <br>symbols</mat-hint>
+
+            <div class="example">
+                <mat-checkbox class="box">Show Password</mat-checkbox>
+            </div>
+            
+            <div class="footer">
+                <button class="text" routerLink="/login"> Sign in instead </button>
+                <button (click)="onSubmit()" routerLink="/login" mat-raised-button color="primary" class="button">Next</button>
+            </div>
+         
+
+        </form>
+        <div class="img-part" fxHide.xs fxHide.sm>
+            <div class="image">
+                <img src="../../assets/account.svg" style="height: 6cm; width:8.5cm;">
+                <div class="Img-text">
+                    <div class="gText" fxLayoutAlign="center">One account. All of Google</div>
+                    <div class="gText" fxLayoutAlign="center">working for you.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="body">
+    <div class="form">
+        <form [formGroup]="registerForm">
+        <p>
+            <span class="f">F</span>
+            <span class="u">u</span>
+            <span class="n">n</span>
+            <span class="d">d</span>
+            <span class="o">o</span>
+            <span class="O">o</span>
+        </p>
+      <h1>
+          Create your Account
+      </h1>
+      <div class="flex1">
+        <div class="row-content1">
+              
+             <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="" formControlName="firstName">
+                <mat-error>First Name is required !</mat-error>
+                    </mat-form-field>
+        </div>
+            <div class="row-content2">
+                 
+                <mat-form-field appearance="outline">
+                   <mat-label>Last Name</mat-label>
+                   <input matInput placeholder="" formControlName="lastName">
+                   <mat-error>Last Name is required !</mat-error>
+                       </mat-form-field>
+            </div>
+      </div>
+    <div class="row-content3">
+      
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="" formControlName="email">
+            <mat-error>email-Id is required !</mat-error>
+        </mat-form-field>
+        <h4> You can use letters, numbers & periods</h4>
+        <h3>Use my current email address instead</h3>
+    </div> 
+    <div class="flex2">
+        <div class="row-content1">
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="" formControlName="password">
+                <mat-error>Password is required !</mat-error>
+            </mat-form-field>
+            <h4>Use 8 or more characters with a mix of letters, numbers & symbols</h4>
+            <section class="example-section">
+                <mat-checkbox class="example-margin">Show password</mat-checkbox>
+                
+              </section>
+        </div>   
+        <div class="row-content2">
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput placeholder="" formControlName="confirmPassword">
+                    <mat-error>Confirm Password is required !</mat-error>
+                </mat-form-field>
+        </div>
+            
+        </div>
+        <div class="modal-footer">
+            <p class="text" routerLink="/login"> Sign in instead </p>
+            <button (click)="onSubmit()" mat-raised-button color="primary" class="button">Next</button>
+        </div>
+        <div class="imgdiv">
+            <figure class="images">
+                <img src="../../assets/account.svg">
+                <h3 class="gText">One Account. All of Google</h3>
+                <h3 class="gText">Working for you</h3>
+            </figure>
+        </div>
+    </form>
+
+  </div>   
+
+</div>-->

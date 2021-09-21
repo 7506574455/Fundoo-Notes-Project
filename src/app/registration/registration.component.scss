@@ -1,0 +1,304 @@
+.main {
+    padding: 1cm 0cm 1.5cm 0cm;
+    //   border:rgb(223, 226, 10) 2px solid;
+
+}
+
+.mainBody {
+    padding: 1cm 0cm 1cm 0cm;
+    border: rgba(128, 128, 128, 0.699) 0.1px solid;
+    border-radius: 10px;
+}
+
+.container {
+    padding: 1cm;
+    //  border:rgb(223, 226, 10) 2px solid;
+
+}
+
+.logo {
+    font-family: monospace;
+    font-size: 30px;
+    
+}
+
+.f {
+    
+    color: #4285f4;
+  }
+  .u {
+    
+    color: #db4437;
+  }
+  .n {
+    
+    color: #f4b400;
+  }
+  .d {
+    
+    color: #4285f4;
+  }
+.o {
+
+     color: red;
+}
+
+.O {
+    
+    color: green;
+}
+
+
+.h1 {
+    font-size: 22px;
+    font-family: Arial;
+    padding-top: 0.7cm;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section1 {
+    margin-top: 0.7cm;
+}
+
+.section3 .mat-button{
+    padding: 0.5cm 0cm 0.5cm 0cm;
+    padding-left: 0cm;
+}
+
+.example {
+    margin-top: 0.5cm;
+}
+
+
+.footer .button {
+    background-color: #1A73E8;
+    color: white;
+    font-size: 18px;
+}
+
+.footer {
+    margin: 1.5cm 0cm 0.3cm 0cm;
+}
+
+.footer .text {
+    padding-left: 0%;
+    border: none;
+    background-color: white;
+    color: #1A73E8;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.img-part {
+    margin-top: 3cm;
+    // border: gray 2px solid;
+}
+
+.gText
+ {
+
+    font-size: 18px;
+    color: gray;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+/*.body{
+    width: 55vw;
+    height: 80vh;
+    position: absolute;
+    border: 1px solid black;
+    background: white;
+    display: flex;
+    margin:2cm 6cm;
+     padding:1cm;
+}
+
+.form{
+    align-items: center;
+    position: absolute;
+    
+}
+
+.wBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.f {
+    font-size: 2em;
+    color: #4285f4;
+  }
+  .u {
+    font-size: 2em;
+    color: #db4437;
+  }
+  .n {
+    font-size: 2em;
+    color: #f4b400;
+  }
+  .d {
+    font-size: 2em;
+    color: #4285f4;
+  }
+  .o {
+    font-size: 2em;
+    color: #0f9d58;
+  }
+  .O {
+    font-size: 2em;
+    color: #db4437;
+  }
+
+.input {
+    width: 180px;
+    height: 30px;
+    border: 1px solid #00000075;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.input_Email {
+    width: 390px;
+    height: 30px;
+    border: 1px solid #00000075;
+    border-radius: 5px;
+}
+
+.Email-Text {
+    margin: 0;
+    color: #2b2b2b8c;
+}
+
+.placewidth{
+    width: 424px;
+}
+
+
+.flex1{
+    display: flex;
+    justify-content: space-between;
+    width:35%;
+}
+
+.row-content2 {
+    margin-left: 10px;
+}
+
+
+.images{
+    
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    z-index: 1;
+    right: 0%;
+    top : 15%;
+    left:100%;
+    margin-top: 0;
+    height: 6cm;
+    width: 6cm;
+}
+
+
+.flex2 {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.row-content3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px 0px 0px 25px;
+    padding-left: 0%;
+    margin-left: 1%;
+}
+
+h3{
+    color: blue;
+}
+h4 {
+    
+    margin: -8px -205px 0px 15px;
+    color: #00000091;
+}
+
+
+.input {
+    width: 180px;
+    height: 30px;
+    border: 1px solid #00000075;
+    border-radius: 5px;
+    margin-left: auto;
+}
+.imgdiv{
+   margin: auto; 
+   
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+    align-items: baseline;
+    padding: 40px 0px 0px 0px;
+    border-top: 0px;
+}
+
+.button {
+    background-color: #4688f1;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 35px;
+    cursor: pointer;
+    height: 40px;
+    width: auto;
+    font-weight: 900;
+}
+
+.text {
+    display: flex;
+    color: #3566b8;
+    padding: 0px 172px 0px 34px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.gText{
+    color: black;
+    opacity: 0.8;
+    text-align: center;
+    -webkit-text-stroke: thin;
+    margin-left: -20px;
+    margin-bottom: 0px;
+}
+
+.example-section {
+    margin: 12px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }*/

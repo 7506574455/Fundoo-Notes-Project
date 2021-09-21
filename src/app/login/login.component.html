@@ -1,0 +1,112 @@
+<div class="main" fxLayoutAlign="center">
+  <div class="mainBody" fxLayoutAlign="center ">
+      <form class="container" [formGroup]="loginForm">
+          <div class="logo" fxLayoutAlign="center">
+              <span class="f">F</span>
+              <span class="u">u</span>
+              <span class="n">n</span>
+              <span class="d">d</span>
+              <span class="o">o</span>
+              <span class="O">o</span>
+          </div>
+
+          <div class="h1" fxLayoutAlign="center">
+            <span>Sign in</span>
+        </div>
+         
+        <div class="h2" fxLayoutAlign="center">
+          <span>Use your Fundoo Account</span>
+      </div>
+
+      <div class="section1">
+        <mat-form-field appearance="outline" class="emailorphone" style="width: 11cm;">
+            <mat-label>Email or phone</mat-label>
+            <input matInput formControlName="email" placeholder="Email or phone">
+            <mat-error>Email or phone Required !</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="section2">
+        <button mat-button color="primary" routerLink="/password">Forgot email? </button>
+    </div>
+
+    <div class="section3">
+      <mat-form-field appearance="outline" class="password" style="width: 11cm;">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" placeholder="Password">
+          <mat-error>Password Required !</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="section4">
+      <button mat-button color="primary" routerLink="/changepw">Reset password </button>
+  </div>
+
+  <mat-hint>Not your computer?Use Guest mode to sign in privately <br>Learn more</mat-hint>
+
+  <div class="footer">
+    <button class="text" routerLink="/registration"> Create account</button>
+    <button (click)="onSubmit()" mat-raised-button color="primary" class="button">Next</button>
+</div>
+</form>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="maincontainer">
+<div class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<p>
+    <span class="f">F</span>
+    <span class="u">u</span>
+    <span class="n">n</span>
+    <span class="d">d</span>
+    <span class="o">o</span>
+    <span class="O">o</span>
+</p>
+<h1>Sign in</h1>
+<h2>Use your Fundoo Account</h2>
+<div class="emailcontainer">
+<mat-form-field appearance="outline" class="placewidth">
+    <mat-label>Email or phone</mat-label>
+    <input matInput placeholder="" formControlName="email">
+    <mat-error>Email or phone is required !</mat-error>
+  </mat-form-field>
+</div>
+  <h3 style="color: blue;" routerLink="/password">Forgot email?</h3>
+  <mat-form-field appearance="outline" class="placewidth">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="" formControlName="password">
+    <mat-error>Password required !</mat-error>
+  </mat-form-field>
+  <h6 style="color: blue;" routerLink="/changepw">Reset password?</h6>
+  
+  <h4>Not our computer?Use Guest mode to sign in privately.</h4>
+     <h5>Learn more</h5>
+  
+
+ <div class="loginfooter">
+    <p class="text" routerLink="/registration">Create account </p>
+    <button type="submit" mat-raised-button color="primary" class="button">Next</button>
+</div>
+</form>
+</div>
+</div>-->

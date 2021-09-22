@@ -13,21 +13,21 @@ export class UserService {
 
   registerUser(reqdata:any){
     console.log(reqdata);
-   return this.httpService.Post('user/userSignUp',reqdata)
+   return this.httpService.Post('/user/userSignUp',reqdata)
   }
   loginUser(reqdata:any){
     console.log(reqdata);
-    return this.httpService.Post('user/login',reqdata)
+    return this.httpService.Post('/user/login',reqdata)
   }
   
   passwordUser(reqdata:any){
     console.log(reqdata);
-    return this.httpService.Post('user/reset',reqdata)
+    return this.httpService.Post('/user/reset',reqdata)
    }
 
   changeUser(reqdata:any){
     console.log(reqdata);
-    return this.httpService.Post('user/reset-password',reqdata)
+    return this.httpService.Post('/user/reset-password',reqdata)
   } 
 
 

@@ -16,13 +16,19 @@ import { PasswordComponent } from './password/password.component';
 import { ChangepwComponent } from './changepw/changepw.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
     PasswordComponent,
-    ChangepwComponent
+    ChangepwComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule
 
     
   ],

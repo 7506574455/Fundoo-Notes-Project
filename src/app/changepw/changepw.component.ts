@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user-service/user.service';
+import { MatSnackBar} from  '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-changepw',
@@ -9,9 +11,10 @@ import { UserService } from '../services/user-service/user.service';
 })
 export class ChangepwComponent implements OnInit {
   changepwForm!: FormGroup;
-  submitted!: boolean;
+  token:any
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService, private activatedRoute: ActivatedRoute,
+    private snackBar:MatSnackBar ) { }
 
   ngOnInit() {
     this.changepwForm = this.formBuilder.group({
@@ -23,12 +26,14 @@ export class ChangepwComponent implements OnInit {
 
   }
 
-
-// convenience getter for easy access to form fields
-get f() { return this.changepwForm.controls; }
-
    onSubmit() {
-    this.submitted = true;
+     this.token = this.activatedRoute.snapshot.paramMap.get('token')
+     console.log(this.token);
+
+     localStorage.setItem('token',this.token)
+
+     console.log("onsubmit function is calling",this.changepwForm.value);
+    
     let req={
       password: this.changepwForm.value.password,
       confirmPassword: this.changepwForm.value.confirmPassword
@@ -37,9 +42,22 @@ get f() { return this.changepwForm.controls; }
     console.log(req)
     this.userService.changeUser(req).subscribe((response: any)=>{
       console.log(response);
+      this.snackBar.open("password successfully ", ' ', {
+        duration: 1000,
+     });
 
     }, (error: any)  => {
       console.log(error);
+      this.snackBar.open("password failed ", ' ', {
+        duration: 1000,
+     });
     })
    }
+
+   showPassword(){
+     let confirmPassword = document.getElementById('confirmPassword');
+   }
+   // convenience getter for easy access to form fields
+get f() { return this.changepwForm.controls; }
+   
 }

@@ -10,24 +10,22 @@ import { MatSnackBar} from  '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  submitted!: boolean;
+  
 
   constructor(private formBuilder: FormBuilder, private userService:UserService, private snackBar:MatSnackBar) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
+
     email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
 
 }
 
-// convenience getter for easy access to form fields
-get f() { return this.loginForm.controls; }
-
    onSubmit() {
 
-    this.submitted = true;
+    console.log("onsubmit function is calling", this.loginForm.value);
 
     let req={
       email: this.loginForm.value.email,
@@ -53,4 +51,7 @@ get f() { return this.loginForm.controls; }
   
 
    }
+   // convenience getter for easy access to form fields
+get f() { return this.loginForm.controls; }
 }
+

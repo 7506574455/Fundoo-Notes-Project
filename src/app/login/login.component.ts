@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user-service/user.service';
 import { MatSnackBar} from  '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +10,10 @@ import { MatSnackBar} from  '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  submitted!: boolean;
+  
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService, private snackBar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService, private snackBar:MatSnackBar,
+    private router:Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -22,12 +23,10 @@ export class LoginComponent implements OnInit {
 
 }
 
-// convenience getter for easy access to form fields
-get f() { return this.loginForm.controls; }
 
    onSubmit() {
 
-    this.submitted = true;
+    console.log("onsubmit function is calling", this.loginForm.value);
 
     let req={
       email: this.loginForm.value.email,
@@ -39,12 +38,16 @@ get f() { return this.loginForm.controls; }
     
     this.userService.loginUser(req).subscribe((response: any) =>{
       console.log(response);
+      localStorage.setItem('token',response.id)
+      this.router.navigateByUrl('/dashboard')
+
       this.snackBar.open("Login successfully ", ' ', {
         duration: 1000,
      });
 
     }, (error:any) => {
       console.log(error);
+
       this.snackBar.open("Login failed ", ' ', {
         duration: 1000,
      });
@@ -53,4 +56,6 @@ get f() { return this.loginForm.controls; }
   
 
    }
+   // convenience getter for easy access to form fields
+get f() { return this.loginForm.controls; }
 }

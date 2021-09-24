@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card style="width:400px;">
+      <div (click)="onClick()" *ngIf="!show||show" >
+        Title
+      </div>
+      <div *ngIf="show">
+          <textarea type="text" class="text">Take a note...</textarea>
+        <app-icons></app-icons>
+        <div (click)="createNote()">close</div>
+      </div>
+    
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+<!--<button mat-icon-button class="example-icon" aria-label="">
+    <mat-icon>check_box</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="">
+    <mat-icon>brush</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="" >
+    <mat-icon>photo</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="" >
+    <mat-icon>pin</mat-icon>
+  </button>-->
+
+

@@ -16,13 +16,29 @@ import { PasswordComponent } from './password/password.component';
 import { ChangepwComponent } from './changepw/changepw.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import { TakenoteComponent } from './components/takenote/takenote.component';
+import { GetallComponent } from './components/getall/getall.component';
+import { DisplayComponent } from './components/display/display.component';
+import {MatCardModule} from '@angular/material/card';
+import { IconsComponent } from './components/icons/icons.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
     PasswordComponent,
-    ChangepwComponent
+    ChangepwComponent,
+    DashboardComponent,
+    TakenoteComponent,
+    GetallComponent,
+    DisplayComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +52,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule
+    
     
   ],
   providers: [],

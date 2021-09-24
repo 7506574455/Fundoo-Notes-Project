@@ -1,0 +1,61 @@
+
+
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" style="border: 1px solid gray;">
+    <mat-toolbar color="" class="example-toolbar" style="border: 1px solid gray;">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <img src="../../../assets/keep.jpg" alt="">
+      <h1 class="example-app-name">Fundoo Notes</h1>
+     
+      
+      <div class="searchbar" fxLayoutAlign="center" id="responsive-toolbar">
+        <button mat-icon-button class="search-icon">
+            <mat-icon>search</mat-icon>
+        </button>
+        <input  class="search-input"  type="text"  placeholder="Search"  />
+    
+      </div>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="">
+        <mat-icon>refresh</mat-icon>
+        
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="">
+        <mat-icon>view_agenda</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="" style="margin-left: 5px">
+        <mat-icon>apps</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="" style="margin-left: 18px">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      
+
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+        <!--  <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>-->
+        <a  mat-list-item routerLink="notes" > <mat-icon>lightbulb</mat-icon>Notes </a>
+        
+        <a mat-list-item routerLink="." > <mat-icon>notifications_none</mat-icon>Reminders</a>
+        <a mat-list-item routerLink="." > <mat-icon>create</mat-icon>Edit labels</a>
+        <a mat-list-item routerLink="." > <mat-icon>archive</mat-icon>Archive</a>
+        <a mat-list-item routerLink="." > <mat-icon>delete</mat-icon>Bin</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    <mat-sidenav-content>
+    content appear here
+      <router-outlet></router-outlet>
+      </mat-sidenav-content>
+     
+      <mat-sidenav-content>
+        <p *ngFor="let content of fillerContent">{{content}}</p>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

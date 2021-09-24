@@ -10,7 +10,7 @@ import { MatSnackBar} from  '@angular/material/snack-bar';
 })
 export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
-  submitted!: boolean;
+  
 
   constructor(private formBuilder: FormBuilder, private userService:UserService,private snackBar:MatSnackBar) { }
 
@@ -26,16 +26,16 @@ export class RegistrationComponent implements OnInit {
   });
 }
 
-// convenience getter for easy access to form fields
-get f() { return this.registerForm.controls; }
+
 
    onSubmit() {
-    this.submitted = true;
+    console.log("onsubmit function calling", this.registerForm.value);
     let req={
       firstName: this.registerForm.value.firstName,
       lastName:this.registerForm.value.lastName,
       email:this.registerForm.value.email,
       password:this.registerForm.value.password,
+      confirmPassword:this.registerForm.value.confirmPassword,
       service:"advance"
   
 
@@ -43,17 +43,19 @@ get f() { return this.registerForm.controls; }
      console.log(req)
      this.userService.registerUser(req).subscribe((response: any)=>{
       console.log(response);
-      this.snackBar.open("Login successfully ", ' ', {
+      this.snackBar.open("Registration successfully ", ' ', {
         duration: 1000,
       });
 
     }, (error: any) => {
       console.log(error); 
-      this.snackBar.open("Login failed ", ' ', {
+      this.snackBar.open("Registration failed ", ' ', {
         duration: 1000,   
     }) ;
 
   })
 
    }
+   // convenience getter for easy access to form fields
+get f() { return this.registerForm.controls; }
 }

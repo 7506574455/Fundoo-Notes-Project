@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  user='1'
   loginForm!: FormGroup;
   
 
@@ -16,12 +17,15 @@ export class LoginComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit() {
+    localStorage.setItem('SeesionUser',this.user)  
+  
     this.loginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
 
 }
+  
 
 
    onSubmit() {

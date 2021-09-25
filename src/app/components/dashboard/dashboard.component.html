@@ -7,14 +7,16 @@
       <img src="../../../assets/keep.jpg" alt="">
       <h1 class="example-app-name">Fundoo Notes</h1>
      
-      
-      <div class="searchbar" fxLayoutAlign="center" id="responsive-toolbar">
-        <button mat-icon-button class="search-icon">
+      <div class="toolbar" id="responsive-toolbar" >
+        <input class="search-input" type="text" placeholder="Search" />
+    </div>
+
+    <div class="searchbar" >
+        <button mat-icon-button>
             <mat-icon>search</mat-icon>
         </button>
-        <input  class="search-input"  type="text"  placeholder="Search"  />
-    
-      </div>
+        <input class="search-input" type="text" placeholder="Search" />
+    </div>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="">
         <mat-icon>refresh</mat-icon>
@@ -50,7 +52,7 @@
         </mat-nav-list>
       </mat-sidenav>
     <mat-sidenav-content>
-    content appear here
+    
       <router-outlet></router-outlet>
       </mat-sidenav-content>
      

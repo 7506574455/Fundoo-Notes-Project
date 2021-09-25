@@ -26,6 +26,9 @@ import { GetallComponent } from './components/getall/getall.component';
 import { DisplayComponent } from './components/display/display.component';
 import {MatCardModule} from '@angular/material/card';
 import { IconsComponent } from './components/icons/icons.component';
+import { AuthguardServiceService } from './services/authguardservice/authguard-service.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { IconsComponent } from './components/icons/icons.component';
     TakenoteComponent,
     GetallComponent,
     DisplayComponent,
-    IconsComponent
+    IconsComponent,
+    UpdatenoteComponent
   ],
   imports: [
     BrowserModule,
@@ -57,11 +61,14 @@ import { IconsComponent } from './components/icons/icons.component';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
     
     
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

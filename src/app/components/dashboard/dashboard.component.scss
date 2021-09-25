@@ -9,8 +9,7 @@
   }
   
   .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    position: fixed; 
     z-index: 2;
   }
   
@@ -19,14 +18,10 @@
   }
   
   .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
   }
   
   .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
 
@@ -38,15 +33,53 @@
     display: none;
 }
 
-.search-input {
-    justify-content: center;
-    padding-left: 6cm ;
-    width: 10cm;
-    background-color: whitesmoke;
-    border: 1px solid gray;
-    
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+mat-icon {
+    opacity: 70%;
+}
+button:hover {
+    background-color: rgb(226, 226, 226);
 }
 
-.search-icon{
-    padding-left: 4cm;
-}
+.mat-toolbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    
+
+    .search {
+        width: 50%;
+        border-style: none;
+        background-color: #f1f3f4;
+       
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        border-color: transparent;
+        border-radius: 50%;
+    }
+    .searchbar {
+        background-color: #f1f3f4;
+        width: 50%;
+        border-radius: 10px ;
+        
+        
+
+         input {
+            background-color: #f1f3f4;
+            border-style: none;
+            font-size: medium;
+            width: match-parent;
+            padding: 6px 0px;
+            text-align: left;
+         }
+      }    
+    }

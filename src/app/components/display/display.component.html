@@ -1,38 +1,14 @@
 
-<div fxLayoutAlign="row"  fxLayoutGap="15px" style="margin-top: 15px;">
+<div class="display-notes"fxLayout="row "  fxLayoutGap="20px" style="margin-top: 15px;">
 
-<mat-card style= "width:320px;height:200px; background-color: violet;" *ngFor="let note of NoteArray">
-<div>
-    title
-</div>
-<div>
-    description- welcome to notes<br>custom batch
-    
-</div>
-<!--<app-icons></app-icons>-->
+<mat-card style= "width:250px;height:250px; background-color: violet;" *ngFor="let note of NoteArray">
+    <div (click)="openDialog(note)">
+        {{note.title}}
+         </div>
+         <div (click)="openDialog(note)">
+        {{note.description}}
+        </div>
+<app-icons [notecard]="note"></app-icons>
 </mat-card>
 
-<mat-card style= "width:320px;height:300px; background-color: tomato;">
-    <div>
-        title
-    </div>
-    <div>
-        description- welcome to notes<br>fellowship batch
-        
-    </div>
-   <!--- <app-icons></app-icons>-->
-    </mat-card>
-
-    <mat-card style= "width:320px;height:200px; background-color: greenyellow;">
-        <div>
-            title
-        </div>
-        <div>
-            description- welcome to notes
-            
-        </div>
-   <!--- <app-icons></app-icons>-->
-        </mat-card>
-    
 </div>
-   

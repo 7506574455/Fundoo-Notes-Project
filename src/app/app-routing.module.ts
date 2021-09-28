@@ -7,7 +7,9 @@ import { PasswordComponent } from './password/password.component';
 import { ChangepwComponent } from './changepw/changepw.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetallComponent } from './components/getall/getall.component';
-
+import { AuthenticationGuard } from './authentication.guard';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
 const routes: Routes = [
   {path:'', redirectTo:"login",pathMatch:'full'},
 
@@ -15,10 +17,13 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'password',component:PasswordComponent},
   {path:'changepw',component:ChangepwComponent},
-  {path: 'dashboard',component:DashboardComponent,
+  {path: 'dashboard',component:DashboardComponent, canActivate:[AuthenticationGuard],
    children:[
     {path:'', redirectTo:"login",pathMatch:'full'},
-     {path:'notes',component:GetallComponent}
+     {path:'notes',component:GetallComponent},
+     {path:'archive',component:ArchiveComponent},
+     {path:'trash',component:TrashComponent}
+     
    ]
   }
   

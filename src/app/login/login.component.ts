@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user='1'
+ 
   loginForm!: FormGroup;
   
 
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit() {
-    localStorage.setItem('SeesionUser',this.user)  
+   
   
     this.loginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(req).subscribe((response: any) =>{
       console.log(response);
       localStorage.setItem('token',response.id)
-      this.router.navigateByUrl('/dashboard')
+      this.router.navigateByUrl('/dashboard/notes')
 
       this.snackBar.open("Login successfully ", ' ', {
         duration: 1000,

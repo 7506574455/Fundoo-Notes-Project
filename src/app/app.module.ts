@@ -29,7 +29,10 @@ import { IconsComponent } from './components/icons/icons.component';
 import { AuthguardServiceService } from './services/authguardservice/authguard-service.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import {MatMenuModule} from '@angular/material/menu';
 
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,10 @@ import { UpdatenoteComponent } from './components/updatenote/updatenote.componen
     GetallComponent,
     DisplayComponent,
     IconsComponent,
-    UpdatenoteComponent
+    UpdatenoteComponent,
+   
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,9 @@ import { UpdatenoteComponent } from './components/updatenote/updatenote.componen
     MatListModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
+   
     
     
   ],

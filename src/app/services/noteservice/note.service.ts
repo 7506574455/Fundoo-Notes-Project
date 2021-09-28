@@ -30,6 +30,28 @@ export class NoteService {
       return this.httpService.PostService(this.BaseUrl + '/notes/addNotes',data, true, httpAuthOptions);
   
     }
+    //archive
+    getAllArchiveNote(){
+      let httpAuthOptions = {
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          'Authorization': this.token
+        })
+      };
+      return this.httpService.GetService(this.BaseUrl + '/notes/getNotesList', true, httpAuthOptions);
+  
+    }
+//trash
+    getAllTrash(){
+      let httpAuthOptions = {
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          'Authorization': this.token
+        })
+      };
+      return this.httpService.GetService(this.BaseUrl + '/notes/getNotesList', true, httpAuthOptions);
+  
+    }
   
   
     getAllNoteService(){
@@ -53,6 +75,8 @@ export class NoteService {
   
     }
 
+   
+
     deleteNoteService(data:any){
       let httpAuthOptions = {
         headers:new HttpHeaders({
@@ -61,5 +85,18 @@ export class NoteService {
         })
       };
       return this.httpService.PostService(this.BaseUrl + '/notes/deleteForeverNotes',data, true, httpAuthOptions);
+    }
+
+    changeColorService(data:any){
+      let httpAuthOptions = {
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          'Authorization': this.token
+        })
+      };
+      console.log(data);
+      console.log(httpAuthOptions);
+      
+      return this.httpService.PostService(this.BaseUrl + '/notes/changesColorNotes',data,true, httpAuthOptions);
     }
 }

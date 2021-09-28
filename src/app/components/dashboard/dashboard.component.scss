@@ -70,7 +70,7 @@ button:hover {
         background-color: #f1f3f4;
         width: 50%;
         border-radius: 10px ;
-        
+        margin-left: 60px;
         
 
          input {
@@ -83,3 +83,48 @@ button:hover {
          }
       }    
     }
+
+.sidepart{
+  display: flex;
+  flex-wrap: wrap ;
+}    
+
+.mat-sidenav-container .mat-list-item{
+  //    border:2px solid red;
+     padding:none;
+     background-color: none;
+      border-radius: 20px; //-----------------------
+     outline: none;
+  
+  }
+  
+  .main-sidenavbar .Notes:hover{
+      background-color: #f1f3f4;
+      border-radius: 20px;
+  }
+  .main-sidenavbar .Notes:active{
+      background-color: lightpink;
+      border-radius: 20px;
+  }
+
+  .main-sidenavbar .Reminders:active{
+    background-color: lightseagreen;
+    border-radius: 20px;
+}
+
+.main-sidenavbar .Edit:active{
+  background-color: lightsteelblue;
+  border-radius: 20px;
+}
+
+.main-sidenavbar .archive:active{
+  background-color: lightpink;
+  border-radius: 20px;
+}
+
+.main-sidenavbar .Bin:active{
+  background-color: lightpink;
+  border-radius: 20px;
+}
+
+

@@ -1,0 +1,92 @@
+
+<div class="main" fxLayoutAlign="center center">
+      <mat-card (click)="onClick()" *ngIf="!show" >
+        <div class="titleicon" >
+        <input autofocus matInput  placeholder="Take a Note.." style="width:10cm" type="text"/>
+        <button mat-icon-button class="example-icon" aria-label="">
+          <mat-icon>check_box</mat-icon>
+         <!--- <img src="../../../assets/dashicons/check_box_white_24dp.svg" alt="">-->
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="">
+          <mat-icon>brush</mat-icon>
+          <!--<img src="../assets/dashicons/brush_white_24dp.svg" alt="">-->
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="">
+          <img src="../assets/dashicons/insert_photo_black_24dp.svg" alt="">
+        </button>
+      </div>
+      </mat-card>
+      <mat-card *ngIf="show">
+    
+      <div fxLayout="row" fxLayoutGap="10px">
+        
+        <input  style="width:12cm" matInput placeholder="Title"[(ngModel)]="title"/>
+        <mat-icon>push_pin</mat-icon>
+      </div><br>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div>
+
+        <input style="width:12cm" matInput placeholder="Take a note..."[(ngModel)]="description"/>
+      </div>
+    </div>
+    <br>
+    <div fxLayout="row">
+    
+    <app-icons></app-icons>
+    <br>
+        <button class="close" mat-button (click)="onClose()">Close</button>
+     </div>
+      
+  </mat-card>
+</div>
+
+
+
+<!--<mat-card class="cn-card ">
+  <div class="card-title"(click)="onClick()" *ngIf="!show||show">
+      <input class="title-in font" matInput placeholder="Title" id="title" [(ngModel)]="title">
+  </div>
+
+  <div class="note-input" *ngIf="show">
+      <textarea role="textbox" Placeholder="Take a note..."
+          class="notes-main"  id="description" [(ngModel)]="description"></textarea>
+      <div class="img-upload" *ngIf="!fullEdit"></div>
+
+  </div>
+
+  <div class="card-bottom" id="bottom" *ngIf="show">
+      <div class="note-prop">
+          <div class="reminder prop" role="button" ></div>
+          <div class="back-img prop" role="button" ></div>
+          <div class="back-color prop" role="button"></div>
+          <div class="archive prop" role="button"  ></div>
+          <div class="more-opn prop" role="button" ></div>
+
+          <!--<div class="">  -->
+          <!-- Templete statements -->
+     <!-- </div>
+      <div class="close-note" (click)="onClose()">Close</div>
+  </div>
+
+  <!-- <app-icons></app-icons> -->
+<!--</mat-card>-->
+
+
+
+
+
+
+<!--<button mat-icon-button class="example-icon" aria-label="">
+    <mat-icon>check_box</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="">
+    <mat-icon>brush</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="" >
+    <mat-icon>photo</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="" >
+    <mat-icon>pin</mat-icon>
+  </button>-->
+
+

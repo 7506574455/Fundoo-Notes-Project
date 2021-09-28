@@ -1,0 +1,76 @@
+
+<div class="example-container" style="border: 1px solid gray;">
+    <mat-toolbar color="" class="example-toolbar" style="border: 1px solid gray;">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon></button>
+      <img src="../../../assets/keep.jpg" alt="">
+      <h1 class="example-app-name">Fundoo Notes</h1>
+     
+      <div class="toolbar" id="responsive-toolbar" >
+        <input class="search-input" type="text" placeholder="Search" />
+    </div>
+
+    <div class="searchbar"  >
+        <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+        <input class="search-input" type="text" placeholder="Search" />
+        
+    </div>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="">
+        <mat-icon>refresh</mat-icon>
+        
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="">
+        <mat-icon>view_agenda</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="" style="margin-left: 5px">
+        <mat-icon>apps</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="" style="margin-left: 16px">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      
+
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container">
+                           >
+      <mat-sidenav #snav mode="side">
+        <mat-nav-list>
+        <!--  <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>-->
+        <div class="main-sidenavbar" style="padding: 25px;">
+          <div fxLayoutAlign="column" class="Notes" fxLayoutGap="20px">
+              <img src="../../../assets/dashicons/lightbulb_black_24dp.svg" alt="">
+              <a mat-list-item routerLink="/dashboard/notes">Notes</a>
+          </div>
+          <div fxLayoutAlign="row" class="Reminders" fxLayoutGap="20px">
+              <img src="../../../assets/dashicons/notifications_black_24dp.svg" alt="">
+              <a mat-list-item routerLink=".">Reminders</a>
+          </div>
+          <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px">
+              <img src="../../../assets/dashicons/edit_black_24dp.svg" alt="">
+              <a mat-list-item routerLink=".">Edit lables</a>
+          </div>
+          <div fxLayoutAlign="row" class="archive" fxLayoutGap="20px">
+              <img src="../../../assets/dashicons/archive_black_24dp.svg" alt="">
+              <a mat-list-item routerLink="/dashboard/archive">Archive</a>
+          </div>
+          <div fxLayoutAlign="row" class="Bin" fxLayoutGap="20px">
+              <img src="../../../assets/dashicons/delete_black_24dp.svg" alt="">
+              <a mat-list-item routerLink="/dashboard/trash">Bin</a>
+          </div>
+      </div>
+        </mat-nav-list>
+      </mat-sidenav>
+    <mat-sidenav-content>
+    
+      <router-outlet></router-outlet>
+      </mat-sidenav-content>
+     
+     
+    </mat-sidenav-container>
+  </div>

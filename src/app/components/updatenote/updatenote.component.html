@@ -1,0 +1,20 @@
+<div class="mainpart" >
+    <div fxLayout="row" class="box">
+       <input [(ngModel)] ="title">
+      <mat-icon>push_pin</mat-icon>
+    </div>
+    <br>
+    <div class="description">
+        <input [(ngModel)] ="description" placeholder="Note">
+    </div>
+    <br>
+    
+    <app-icons  ></app-icons> 
+    <div class="closepart" >
+     
+    <button mat-button  (click)="updateNote()" fxLayout="row" id="close" style="margin-top: -39px;">close</button>
+      
+    </div>
+
+   
+</div>

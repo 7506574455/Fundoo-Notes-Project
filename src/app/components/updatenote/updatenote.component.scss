@@ -1,0 +1,23 @@
+input{
+    outline:none;
+    width:8cm;
+    border:0px;
+    flex-direction: row;
+}
+.mainpart{
+    width:9cm;
+}
+
+.closepart{
+    display: flex;
+    margin-left: 7.5cm;
+    font-size: 15px;
+    
+}
+
+.title input{
+    font-size: 20px;
+}
+.description input{
+    font-size: 14px;
+}

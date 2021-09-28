@@ -1,0 +1,65 @@
+
+<div class="main" fxLayoutAlign="row"  fxLayoutGap="6px">
+   <!-- <div  >
+        <button mat-icon-button class="pin_icon"  aria-label="">
+            <mat-icon>push_pin</mat-icon>
+          </button>
+    </div>-->
+    <br>
+     <br> 
+     <button mat-icon-button class="example-icon" aria-label=""> 
+    <img src="../../../assets/dashicons/add_alert_black_24dp.svg" alt="">
+</button>
+<button mat-icon-button class="example-icon" aria-label=""> 
+    <img src="../assets/dashicons/person_add_alt_black_24dp.svg" alt="">
+</button>
+<button mat-icon-button [matMenuTriggerFor]="colorMenu" > 
+  <img src="../../../assets/dashicons/color_lens_black_24dp.svg" alt="">   
+<!--colorpart-->
+<mat-menu #colorMenu="matMenu">
+  <div class="color-pop">
+      
+    <div *ngFor="let color of colors" class="colorButton">
+      <button mat-mini-fab [style.background]="color?.code" (click)="setColor(color.code)"></button>
+    </div>
+
+  </div>
+</mat-menu>
+</button>
+
+
+<button mat-icon-button class="example-icon" aria-label=""> 
+    <img src="../assets/dashicons/insert_photo_black_24dp.svg" alt="">
+</button>
+  
+
+<button mat-icon-button class="example-icon" aria-label=""> 
+    <img src="../assets/dashicons/archive_black_24dp.svg" alt="">
+</button>
+    
+    <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="deleteNote()">
+          <span>Delete note</span>
+        </button>
+        <button mat-menu-item>
+          <span>Add label</span>
+        </button>
+        <button mat-menu-item>
+            <span>Add drawing</span>
+        </button>
+      </mat-menu>
+    
+</div>
+    <!--<div class="listIcon" fxLayoutAlign="row">
+        <button mat-icon-button (click)="deleteNote()">
+            <mat-icon>delete</mat-icon>
+        </button>
+
+    
+</div>-->
+   <!--<img src="../../../assets/dashicons/delete_black_24dp.svg" alt="">-->
+  <!--  <img src="../../../assets/dashicons/undo_black_24dp.svg" alt="">
+    <img src="../assets/dashicons/redo_black_24dp.svg" alt="">-->

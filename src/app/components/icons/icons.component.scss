@@ -1,0 +1,17 @@
+.pin_icon{
+    display: flex;
+    left:15px;
+}
+
+.color-pop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  
+    max-width: 170px;
+    margin-left: 5px;
+  }
+  .colorButton {
+    margin-right: 1px;
+    white-space: 2px;
+  }

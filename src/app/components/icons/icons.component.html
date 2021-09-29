@@ -1,10 +1,10 @@
 
 <div class="main" fxLayoutAlign="row"  fxLayoutGap="6px">
-   <!-- <div  >
-        <button mat-icon-button class="pin_icon"  aria-label="">
+   <div  >
+       <!--- <button mat-icon-button class="pin_icon"  aria-label="">
             <mat-icon>push_pin</mat-icon>
-          </button>
-    </div>-->
+          </button>-->
+    </div>
     <br>
      <br> 
      <button mat-icon-button class="example-icon" aria-label=""> 
@@ -33,19 +33,20 @@
 </button>
   
 
-<button mat-icon-button class="example-icon" aria-label=""> 
-    <img src="../assets/dashicons/archive_black_24dp.svg" alt="">
+<button mat-icon-button  class="example-icon" aria-label=""> 
+    <img (click)="archive()" src="../../../assets/dashicons/archive_black_24dp.svg" alt="">
 </button>
     
     <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
+      <img src="../../../assets/dashicons/more_vert_black_24dp.svg" alt="">
+       <!--- <mat-icon>more_vert</mat-icon>-->
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="deleteNote()">
           <span>Delete note</span>
         </button>
         <button mat-menu-item>
-          <span>Add label</span>
+          <span (click)="trash()">Trash</span>
         </button>
         <button mat-menu-item>
             <span>Add drawing</span>

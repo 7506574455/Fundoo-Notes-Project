@@ -13,10 +13,10 @@ export class ArchiveComponent implements OnInit {
   constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
-  
+    this.getAllArchive();
   }
   getAllArchive(){
-    this.noteService.getAllArchiveNote().subscribe((response:any) =>{
+    this.noteService.getAllArchiveNoteService().subscribe((response:any) =>{
       console.log(response);
 
       this.NoteList=response.data.data;
@@ -25,6 +25,7 @@ export class ArchiveComponent implements OnInit {
     },
     error => {
       console.log(error);
+      
     }
    )
   }

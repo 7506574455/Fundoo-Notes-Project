@@ -1,17 +1,15 @@
-.display-notes {
-    margin: 30px;
-    margin-top: 10px;
-}
+.display-cards{
+    margin: 70px;
+    box-sizing: border-box;
 
-.mat-card  {
-    margin-top: 20px;
-    
 }
-
+.display-cards .mat-card{
+    margin-bottom: 20px;
+  
+}
 .mat-card app-icons{
-    visibility: hidden;
-    
-  }
-  .mat-card app-icons:hover{
-      visibility: visible;
-  }
+  visibility: hidden;
+}
+.mat-card app-icons:hover{
+    visibility: visible;
+}

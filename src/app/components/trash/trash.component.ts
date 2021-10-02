@@ -12,19 +12,23 @@ export class TrashComponent implements OnInit {
   constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
+    this.getTrash();
   }
 
-  getAllTrash(){
-    this.noteService.getAllArchiveNote().subscribe((response:any) =>{
-      console.log(response);
+  
+  getTrash(){
+    console.log("Trash Notes");
+    this.noteService.getTrashNoteService().subscribe((response:any)=>{
+      console.log('NoteList Trash ', response);
 
       this.NoteList=response.data.data;
       this.NoteList.reverse()
-      console.log("noteList",this.NoteList)
-    },
-    error => {
+      console.log('noteList Trash' ,this.NoteList)
+
+    },(error:any)=>{
       console.log(error);
-    }
-   )
+      
+    })
+    
   }
 }

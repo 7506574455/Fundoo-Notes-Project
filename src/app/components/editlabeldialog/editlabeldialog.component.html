@@ -1,0 +1,38 @@
+
+<div class="matcard2">
+    Edit labels
+    <br>
+    <br>
+    <div class="input" fxLayout="row" fxLaytoutGap="20px">
+        <button class="cancelbtn" *ngIf="show" (click)="onOpen()" mat-icon-button color="" aria-label="">
+            <img src="../../../assets/editlabel/add_black_24dp.svg">
+          </button>
+          <button class="cancelbtn" *ngIf="!show" (click)="onClose()" mat-icon-button color="" aria-label="">
+            <img src="../../../assets/editlabel/clear_black_24dp.svg">
+          </button>
+      <div class="text">
+    <input  matInput  [(ngModel)]="label" class="typepart" type="text"   placeholder="create new label"  fxLayoutAlign="center center">
+  </div>
+    <button class="cancelbtn" *ngIf="!show" (click)="onCreate()" mat-icon-button color="" aria-label="" >
+        <img src="../../../assets/editlabel/check_black_24dp.svg">
+      </button>
+</div>
+      <div class="icons" fxLayoutAlign="row" fxLayoutAlign="center center" *ngFor="let note of labelList" style="padding-top: 30px;">
+     <div class="iconsfirst" (mouseover)="cursor=true" (mouseout)="cursor=false">
+       <button *ngIf="!cursor" mat-icon-button> <img src="../../../assets/editlabel/label_black_24dp.svg" alt=""></button>
+       <button *ngIf="cursor" (click)="deleteNoteLabel()"  mat-icon-button> <img  src="../../../assets/editlabel/delete_black_24dp.svg" alt=""> </button>
+     </div>
+     <input  style="width:170px;" matInput type="text" [(ngModel)]="note.label" style="border:0px; outline:none;">
+     <div class="iconlast">
+     <button mat-icon-button><img mat-icon-button src="../../../assets/editlabel/edit_black_24dp.svg" alt=""></button>
+      </div>
+    
+    </div>
+    
+  </div>
+  <br>
+     
+     <div class="done" fxLayout="column" fxLayoutAlign="end end">
+       <button  mat-raised-button mat-dialog-close  >Done</button>
+     </div>
+     

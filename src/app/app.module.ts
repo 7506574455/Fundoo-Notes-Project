@@ -33,6 +33,8 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { EditlabelComponent } from './components/editlabel/editlabel.component';
+import { EditlabeldialogComponent } from './components/editlabeldialog/editlabeldialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,9 @@ import { TrashComponent } from './components/trash/trash.component';
     UpdatenoteComponent,
    
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    EditlabelComponent,
+    EditlabeldialogComponent
   ],
   imports: [
     BrowserModule,

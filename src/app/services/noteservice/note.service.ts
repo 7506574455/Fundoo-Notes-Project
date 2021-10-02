@@ -8,6 +8,8 @@ import { environment } from '../../../environments/environment';
 })
 export class NoteService {
   
+  
+  
   BaseUrl=environment.BaseUrl
   token:any
     constructor(private httpService:HttpService ) { 
@@ -30,28 +32,83 @@ export class NoteService {
       return this.httpService.PostService(this.BaseUrl + '/notes/addNotes',data, true, httpAuthOptions);
   
     }
-    //archive
-    getAllArchiveNote(){
+
+    ArchiveNoteService(data:any){
       let httpAuthOptions = {
         headers:new HttpHeaders({
           'Content-Type':'application/json',
           'Authorization': this.token
         })
       };
-      return this.httpService.GetService(this.BaseUrl + '/notes/getNotesList', true, httpAuthOptions);
-  
-    }
-//trash
-    getAllTrash(){
+      return this.httpService.PostService(this.BaseUrl + '/notes/archiveNotes',data, true, httpAuthOptions);
+    //archive get 
+    } 
+    getAllArchiveNoteService(){
       let httpAuthOptions = {
         headers:new HttpHeaders({
           'Content-Type':'application/json',
           'Authorization': this.token
         })
       };
-      return this.httpService.GetService(this.BaseUrl + '/notes/getNotesList', true, httpAuthOptions);
+      return this.httpService.GetService(this.BaseUrl + '/notes/getArchiveNotesList', true, httpAuthOptions);
   
     }
+//trash get 
+   
+  getTrashNoteService(){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.GetService(this.BaseUrl + '/notes/getTrashNotesList', true, httpAuthOptions);
+
+  }
+
+//trash post
+  TrashNoteService(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    
+    return this.httpService.PostService(this.BaseUrl + '/notes/trashNotes',data,true, httpAuthOptions);
+  }
+
+  //edit service
+  createLables(data:any) : Observable<any>{
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.PostService(this.BaseUrl + '/noteLabels',data, true, httpAuthOptions);
+  }
+//get label
+  getLabels(){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.GetService(this.BaseUrl + '/noteLabels/getNoteLabelList', true, httpAuthOptions);
+  }
+
+  //delete label
+  deleteNoteLabel(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.PostService(this.BaseUrl + '/noteLabels/'+data.userId+'/deleteNoteLabel',data, true, httpAuthOptions);
+  }
   
   
     getAllNoteService(){
@@ -99,4 +156,6 @@ export class NoteService {
       
       return this.httpService.PostService(this.BaseUrl + '/notes/changesColorNotes',data,true, httpAuthOptions);
     }
-}
+
+   
+  }

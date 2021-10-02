@@ -43,7 +43,7 @@
         <mat-nav-list>
         <!--  <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>-->
         <div class="main-sidenavbar" style="padding: 25px;">
-          <div fxLayoutAlign="column" class="Notes" fxLayoutGap="20px">
+          <div fxLayoutAlign="column" class="Notes" fxLayoutGap="20px" >
               <img src="../../../assets/dashicons/lightbulb_black_24dp.svg" alt="">
               <a mat-list-item routerLink="/dashboard/notes">Notes</a>
           </div>
@@ -51,9 +51,18 @@
               <img src="../../../assets/dashicons/notifications_black_24dp.svg" alt="">
               <a mat-list-item routerLink=".">Reminders</a>
           </div>
-          <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px">
+
+
+          <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px" *ngFor="let note of labelList">
+            <img src="../../../assets/dashicons/edit_black_24dp.svg" alt="">
+           <a mat-list-item>{{note.label}}</a>
+           
+        </div>
+
+          <div fxLayoutAlign="row" class="Edit" fxLayoutGap="20px" >
               <img src="../../../assets/dashicons/edit_black_24dp.svg" alt="">
-              <a mat-list-item routerLink=".">Edit lables</a>
+             
+              <a mat-list-item (click)="openDialog()" >Edit lables</a>
           </div>
           <div fxLayoutAlign="row" class="archive" fxLayoutGap="20px">
               <img src="../../../assets/dashicons/archive_black_24dp.svg" alt="">

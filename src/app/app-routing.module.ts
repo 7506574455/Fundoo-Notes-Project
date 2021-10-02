@@ -10,6 +10,7 @@ import { GetallComponent } from './components/getall/getall.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import {EditlabelComponent} from './components/editlabel/editlabel.component';
 const routes: Routes = [
   {path:'', redirectTo:"login",pathMatch:'full'},
 
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path:'', redirectTo:"login",pathMatch:'full'},
      {path:'notes',component:GetallComponent},
      {path:'archive',component:ArchiveComponent},
-     {path:'trash',component:TrashComponent}
+     {path:'trash',component:TrashComponent},
+     {path:'edit',component:EditlabelComponent}
      
    ]
   }

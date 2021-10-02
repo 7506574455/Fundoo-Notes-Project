@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
     
     this.userService.loginUser(req).subscribe((response: any) =>{
       console.log(response);
-      localStorage.setItem('token',response.id)
+      localStorage.setItem('token',response.id),
+      localStorage.setItem('userId',response.userId),
       this.router.navigateByUrl('/dashboard/notes')
 
       this.snackBar.open("Login successfully ", ' ', {

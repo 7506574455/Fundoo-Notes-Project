@@ -33,8 +33,12 @@
 </button>
   
 
-<button mat-icon-button  class="example-icon" aria-label=""> 
+<button mat-icon-button *ngIf="!notecard.isArchived" class="example-icon" aria-label=""> 
     <img (click)="archive()" src="../../../assets/dashicons/archive_black_24dp.svg" alt="">
+</button>
+
+<button mat-icon-button *ngIf="notecard.isArchived" class="example-icon" aria-label=""> 
+  <img (click)="unarchive()" src="../../../assets/dashicons/unarchive_black_24dp.svg" alt="">
 </button>
     
     <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -42,17 +46,28 @@
        <!--- <mat-icon>more_vert</mat-icon>-->
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="deleteNote()">
-          <span>Delete note</span>
+        <button mat-menu-item *ngIf="notecard.isDeleted">
+          <mat-icon><img src="../../../assets/dashicons/delete_forever_black_24dp.svg"></mat-icon>
+          <span (click)="deleteNote()">Delete Forever</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item *ngIf="notecard.isDeleted">
+          <mat-icon><img src="../../../assets/dashicons/restore_from_trash_black_24dp.svg"></mat-icon>
+          <span (click)="restoretrash()">Restore</span>
+        </button>
+        <button mat-menu-item *ngIf="!notecard.isDeleted">
+         
           <span (click)="trash()">Trash</span>
         </button>
-        <button mat-menu-item>
-            <span>Add drawing</span>
+        <button mat-menu-item class="addbtn">
+            <span mat-menu-item [matMenuTriggerFor]="lableMenu">Add Label</span>
         </button>
       </mat-menu>
-    
+    <mat-menu #lableMenu="matMenu">
+      <div class="labelNote">Label note</div>
+     <!--- <div mat-menu-item style="margin-bottom:-2px; margin-left: -11px;"></div>-->
+      <input matInput type="text" placeholder="Enter label name">
+
+    </mat-menu>
 </div>
     <!--<div class="listIcon" fxLayoutAlign="row">
         <button mat-icon-button (click)="deleteNote()">

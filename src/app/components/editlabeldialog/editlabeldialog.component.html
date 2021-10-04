@@ -20,11 +20,11 @@
       <div class="icons" fxLayoutAlign="row" fxLayoutAlign="center center" *ngFor="let note of labelList" style="padding-top: 30px;">
      <div class="iconsfirst" (mouseover)="cursor=true" (mouseout)="cursor=false">
        <button *ngIf="!cursor" mat-icon-button> <img src="../../../assets/editlabel/label_black_24dp.svg" alt=""></button>
-       <button *ngIf="cursor" (click)="deleteNoteLabel()"  mat-icon-button> <img  src="../../../assets/editlabel/delete_black_24dp.svg" alt=""> </button>
+       <button *ngIf="cursor" (click)="deleteNoteLabel(note)"  mat-icon-button> <img  src="../../../assets/editlabel/delete_black_24dp.svg" alt=""> </button>
      </div>
      <input  style="width:170px;" matInput type="text" [(ngModel)]="note.label" style="border:0px; outline:none;">
      <div class="iconlast">
-     <button mat-icon-button><img mat-icon-button src="../../../assets/editlabel/edit_black_24dp.svg" alt=""></button>
+     <button (click)="updateLabel(note)" mat-icon-button><img mat-icon-button src="../../../assets/editlabel/edit_black_24dp.svg" alt=""></button>
       </div>
     
     </div>

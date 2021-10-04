@@ -61,16 +61,18 @@ export class EditlabeldialogComponent implements OnInit {
   }
 
   //delete
-  deleteNoteLabel(){
-    this.show = true;
+  deleteNoteLabel(labelList:any){
+   // this.show = true;
+    console.log("Delete Labels");
 
     let data = {
-     label:this.label,
+     labelList:labelList,
       isDeleted: false,
-      userId:localStorage.getItem('userId')
+     // userId:localStorage.getItem('userId')
     }
-    this.noteService.deleteNoteLabel(data).subscribe((response)=>{
-      console.log(response);
+    console.log("delete label",data);
+    this.noteService.deleteLabelsService(data).subscribe((response:any)=>{
+      
       this.matSnackBar.open('label deleted','',{duration:2000,})
     }),
     (error:any) => {
@@ -79,6 +81,27 @@ export class EditlabeldialogComponent implements OnInit {
     }
     
   }
+
+  updateLabel(labelList:any){
+    // this.show = true;
+     console.log("update Labels");
+     
+     let data = {
+      labelList:labelList,
+       isDeleted: false,
+       userId:localStorage.getItem('userId')
+     }
+     console.log("update data",data);
+     this.noteService.updateLabelsService(data).subscribe((response:any)=>{
+       
+       this.matSnackBar.open('label updated','',{duration:2000,})
+     }),
+     (error:any) => {
+       console.log(error);
+       this.matSnackBar.open('label not updated','',{duration:2000,})
+     }
+     
+   }
   
 
 

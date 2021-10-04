@@ -46,6 +46,12 @@ export class HttpService {
     return this.http.put(url,tokenRequired && httpOption);
 
   }
+
+  DeleteService( url: string= '' ,payload:any, tokenRequired:boolean=false, httpOption:any){
+   console.log(url);
+    return this.http.delete(url,tokenRequired && httpOption);
+
+  }
  // Update(){
 
  // }

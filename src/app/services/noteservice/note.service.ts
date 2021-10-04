@@ -100,14 +100,27 @@ export class NoteService {
   }
 
   //delete label
-  deleteNoteLabel(data:any){
+  deleteLabelsService(data:any)  : Observable<any>{
     let httpAuthOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         'Authorization': this.token
       })
     };
-    return this.httpService.PostService(this.BaseUrl + '/noteLabels/'+data.userId+'/deleteNoteLabel',data, true, httpAuthOptions);
+    console.log("noteservice data",data.labelList.id);
+    return this.httpService.DeleteService(this.BaseUrl + '/noteLabels/'+data.labelList.id+'/deleteNoteLabel',data, true, httpAuthOptions);
+  }
+  
+  //update label
+  updateLabelsService(data:any)  : Observable<any>{
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    console.log("noteservice data",data.id);
+    return this.httpService.PostService(this.BaseUrl + '/noteLabels/'+data.id+'/updateNoteLabel',data, true, httpAuthOptions);
   }
   
   

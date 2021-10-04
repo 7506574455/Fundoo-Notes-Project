@@ -119,7 +119,7 @@ export class NoteService {
         'Authorization': this.token
       })
     };
-    console.log("noteservice data",data.id);
+    console.log("label id",data.id);
     return this.httpService.PostService(this.BaseUrl + '/noteLabels/'+data.id+'/updateNoteLabel',data, true, httpAuthOptions);
   }
   

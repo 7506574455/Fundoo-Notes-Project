@@ -15,7 +15,10 @@ export class HttpService {
   constructor(private http: HttpClient) { }
   
   PostService( url: string= '' , payload: any, tokenRequired:boolean=false, httpOption:any){
-
+   console.log(url);
+   console.log(tokenRequired);
+   console.log(httpOption);
+   console.log(payload);
     return this.http.post(url,payload,tokenRequired && httpOption);
 
   }

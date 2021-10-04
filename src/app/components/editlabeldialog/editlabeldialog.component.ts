@@ -82,13 +82,15 @@ export class EditlabeldialogComponent implements OnInit {
     
   }
 
-  updateLabel(labelList:any){
+  updateLabel(labeldata:any){
     // this.show = true;
      console.log("update Labels");
      
      let data = {
-      labelList:labelList,
-       isDeleted: false,
+     // labelList:labelList,
+      // isDeleted: false,
+      id:labeldata.id,
+      label:labeldata.label,
        userId:localStorage.getItem('userId')
      }
      console.log("update data",data);
